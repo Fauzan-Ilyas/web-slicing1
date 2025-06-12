@@ -15,15 +15,16 @@ import Rent4 from "../../public/assets/images/rent4.jpg";
 
 const responsive = {
   desktop: { breakpoint: { max: 3000, min: 1024 }, items: 4, slidesToSlide: 4 },
-  tablet: { breakpoint: { max: 1024, min: 464 }, items: 3, slidesToSlide: 3 },
-  mobile: { breakpoint: { max: 464, min: 0 }, items: 1, slidesToSlide: 1 },
+  tablet: { breakpoint: { max: 1024, min: 640 }, items: 2, slidesToSlide: 2 },
+  mobile: { breakpoint: { max: 640, min: 0 }, items: 1, slidesToSlide: 1 },
 };
+
 const CardRent = () => {
   const [deviceType, setDeviceType] = useState("desktop");
 
   useEffect(() => {
     const width = window.innerWidth;
-    if (width < 464) setDeviceType("mobile");
+    if (width < 640) setDeviceType("mobile");
     else if (width < 1024) setDeviceType("tablet");
     else setDeviceType("desktop");
   }, []);
@@ -51,8 +52,9 @@ const CardRent = () => {
           removeArrowOnDeviceType={["tablet", "mobile"]}
           deviceType={deviceType}
           dotListClass="custom-dot-list-style"
-          itemClass="carousel-item-padding-40-px"
+          itemClass="flex justify-center"
         >
+          {/* card 1 */}
           <div className="box m-5 w-60 relative">
             <div className="absolute p-2 px-3 m-3 bg-green-900 rounded-full">
               <h3 className="font-light text-xs text-white">FOR RENT</h3>
@@ -78,6 +80,8 @@ const CardRent = () => {
               </h1>
             </div>
           </div>
+
+          {/* card 2 */}
           <div className="box m-5 w-60 relative">
             <div className="absolute p-2 px-3 m-3 bg-green-900 rounded-full">
               <h3 className="font-light text-xs text-white">FOR RENT</h3>
@@ -103,6 +107,8 @@ const CardRent = () => {
               </h1>
             </div>
           </div>
+
+          {/* card 3 */}
           <div className="box m-5 w-60 relative">
             <div className="absolute p-2 px-3 m-3 bg-green-900 rounded-full">
               <h3 className="font-light text-xs text-white">FOR RENT</h3>
@@ -128,6 +134,8 @@ const CardRent = () => {
               </h1>
             </div>
           </div>
+
+          {/* card 4 */}
           <div className="box m-5 w-60 relative">
             <div className="absolute p-2 px-3 m-3 bg-green-900 rounded-full">
               <h3 className="font-light text-xs text-white">FOR RENT</h3>
